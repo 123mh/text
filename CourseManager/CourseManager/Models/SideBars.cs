@@ -13,15 +13,21 @@ namespace CourseManager.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     
-    public partial class Classes
+    public partial class SideBars
     {
-        public int Id { get; set; }
-    
-        [Required(ErrorMessage="请输入班级名称")]
-        [StringLength(20,MinimumLength=2,ErrorMessage="班级名称至少包含两个字符")]
+        [Key]
+        [Required]
+        public int id { get; set; }
+        [StringLength(20)]
+        [Display(Name = "名称")]
         public string Name { get; set; }
-     
-        public Nullable<int> TeacherId { get; set; }
-        
+        [StringLength(20)]
+        [Display(Name = "控制器")]
+        public string Controller { get; set; }
+        [StringLength(20)]
+        [Display(Name = "动作")]
+        public string Action { get; set; }
+        [Display(Name = "序号")]
+        public Nullable<int> order { get; set; }
     }
 }

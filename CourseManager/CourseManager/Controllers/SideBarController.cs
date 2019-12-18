@@ -9,33 +9,33 @@ using CourseManager.Models;
 
 namespace CourseManager.Controllers
 {
-    public class TeacherController : Controller
+    public class SideBarController : Controller
     {
         private CourseManagerEntities db = new CourseManagerEntities();
 
         //
-        // GET: /Teacher/
+        // GET: /SideBars/
 
         public ActionResult Index()
         {
-            return View(db.Teacher.ToList());
+            return View(db.SideBars.ToList());
         }
 
         //
-        // GET: /Teacher/Details/5
+        // GET: /SideBars/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            Teacher teacher = db.Teacher.Find(id);
-            if (teacher == null)
+            SideBars sidebars = db.SideBars.Find(id);
+            if (sidebars == null)
             {
                 return HttpNotFound();
             }
-            return View(teacher);
+            return View(sidebars);
         }
 
         //
-        // GET: /Teacher/Create
+        // GET: /SideBars/Create
 
         public ActionResult Create()
         {
@@ -43,70 +43,70 @@ namespace CourseManager.Controllers
         }
 
         //
-        // POST: /Teacher/Create
+        // POST: /SideBars/Create
 
         [HttpPost]
-        public ActionResult Create(Teacher teacher)
+        public ActionResult Create(SideBars sidebars)
         {
             if (ModelState.IsValid)
             {
-                db.Teacher.Add(teacher);
+                db.SideBars.Add(sidebars);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(teacher);
+            return View(sidebars);
         }
 
         //
-        // GET: /Teacher/Edit/5
+        // GET: /SideBars/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Teacher teacher = db.Teacher.Find(id);
-            if (teacher == null)
+            SideBars sidebars = db.SideBars.Find(id);
+            if (sidebars == null)
             {
                 return HttpNotFound();
             }
-            return View(teacher);
+            return View(sidebars);
         }
 
         //
-        // POST: /Teacher/Edit/5
+        // POST: /SideBars/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Teacher teacher)
+        public ActionResult Edit(SideBars sidebars)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(teacher).State = EntityState.Modified;
+                db.Entry(sidebars).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(teacher);
+            return View(sidebars);
         }
 
         //
-        // GET: /Teacher/Delete/5
+        // GET: /SideBars/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Teacher teacher = db.Teacher.Find(id);
-            if (teacher == null)
+            SideBars sidebars = db.SideBars.Find(id);
+            if (sidebars == null)
             {
                 return HttpNotFound();
             }
-            return View(teacher);
+            return View(sidebars);
         }
 
         //
-        // POST: /Teacher/Delete/5
+        // POST: /SideBars/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Teacher teacher = db.Teacher.Find(id);
-            db.Teacher.Remove(teacher);
+            SideBars sidebars = db.SideBars.Find(id);
+            db.SideBars.Remove(sidebars);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

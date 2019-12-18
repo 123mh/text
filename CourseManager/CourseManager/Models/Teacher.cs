@@ -11,17 +11,10 @@ namespace CourseManager.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
-    public partial class Classes
+    public partial class Teacher
     {
         public int Id { get; set; }
-    
-        [Required(ErrorMessage="请输入班级名称")]
-        [StringLength(20,MinimumLength=2,ErrorMessage="班级名称至少包含两个字符")]
         public string Name { get; set; }
-     
-        public Nullable<int> TeacherId { get; set; }
-        
     }
 }

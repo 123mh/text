@@ -22,13 +22,14 @@ namespace CourseManager.Models
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
         }
     
         public DbSet<Classes> Classes { get; set; }
-        public DbSet<Teachers> Teachers { get; set; }
+        public DbSet<Teacher> Teacher { get; set; }
         public DbSet<Students> Students { get; set; }
         public DbSet<CourseManagements> CourseManagements { get; set; }
         public DbSet<Course> Course { get; set; }
+        public DbSet<ActionLinks> ActionLinks { get; set; }
+        public DbSet<SideBars> SideBars { get; set; }
     }
 }

@@ -1,15 +1,16 @@
 ﻿@model CourseManager.Models.Students
-
+@using CourseManager.Models
 @{
     ViewBag.Title = "Create";
-    var classes = (List<CourseManager.Models.Classes>)ViewBag.Classes;
+    
+    var classes = (List<Classes>)ViewBag.Classes;
 }
 
 <h2>Create</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-}
+
     <fieldset>
         <legend>Students</legend>
 
@@ -23,10 +24,10 @@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.ClassId)
-            <select name="ClassId" class="form-control">
+            <select name="ClassId" class="form-contrl">
                 @foreach (var cls in classes)
-                {
-                    <option value="@cls.Id">@cls.Name</option>
+                { 
+                <option value="@cls.Id">@cls.Name</option>
                 }
             </select>
         </div>
@@ -39,7 +40,7 @@
             <input type="submit" value="Create" />
         </p>
     </fieldset>
-                }
+}
 
 <div>
     @Html.ActionLink("Back to List", "Index")
